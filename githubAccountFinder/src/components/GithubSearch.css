@@ -1,0 +1,257 @@
+/* Overall page background and layout */
+*{
+    margin: 0;
+    padding: 0;
+}
+.github-search-container {
+    top: 0;
+    position: fixed;
+    width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Dark blue background matching the image */
+  background-color: black; 
+  color: #ecf0f1;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 40px 20px;
+}
+
+/* Title styling */
+.title {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #ecf0f1;
+  font-weight: 600;
+}
+
+/* Search input and button container */
+.search-box {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  max-width: 700px; /* Slightly wider search box */
+  margin-bottom: 30px;
+}
+
+/* Search input field */
+.search-input {
+  flex-grow: 1;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #3b5998; /* Input color */
+  color: #ecf0f1;
+  font-size: 1.1em;
+  outline: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.search-input::placeholder {
+  color: rgba(236, 240, 241, 0.7);
+}
+
+/* Search button */
+.search-button {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4CAF50; /* Green button (can be any color you prefer) */
+  background-color: #3b5998; /* Using the input color for consistency with the image */
+  color: white;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover:not(:disabled) {
+  background-color: #4a67a7; 
+}
+
+/* --- Profile Card Styling --- */
+.profile-card {
+  width: 100%;
+  max-width: 700px;
+  /* Card background color matching the image */
+  background-color: #2c3e50; 
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  margin-top: 20px;
+  /* Inner dark background for the card */
+  background-color: #223040; 
+  border: 1px solid #3b5998; 
+}
+
+/* Profile Header (Avatar, Name, Joined Date) */
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-right: 20px;
+  object-fit: cover;
+  border: 2px solid #5d7ba6; /* Subtle border */
+}
+
+.info {
+  flex-grow: 1;
+}
+
+.profile-name {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #ecf0f1;
+  margin: 0;
+}
+
+.profile-login {
+  font-size: 1em;
+  color: #95a5a6;
+  margin-top: 5px;
+}
+
+.joined-date {
+  font-size: 0.9em;
+  color: #95a5a6;
+}
+
+/* Stats Box (Repositories, Followers, Following) */
+.stats-box {
+  display: flex;
+  justify-content: space-around;
+  background-color: #1e2a3a; /* Slightly lighter background for the stats block */
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 0.9em;
+  color: #95a5a6;
+  margin-bottom: 5px;
+}
+
+.stat-value {
+  font-size: 1.6em;
+  font-weight: 700;
+  color: #5d7ba6; /* Blue accent for numbers */
+}
+
+/* Location and Links */
+.links-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.link-item {
+  display: flex;
+  align-items: center;
+  width: 48%; /* Two items per row on desktop */
+  margin-bottom: 15px;
+  font-size: 1em;
+  color: #ecf0f1;
+}
+
+.link-item i {
+  margin-right: 10px;
+  color: #5d7ba6; /* Blue accent for icons */
+}
+
+/* View Profile Button */
+.view-profile-button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 600;
+  border-radius: 8px;
+  background-color: #5d7ba6; /* Button background */
+  color: #ecf0f1;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.view-profile-button i {
+  margin-right: 10px;
+}
+
+.view-profile-button:hover {
+  background-color: #4a67a7;
+}
+
+/* General messages */
+.message {
+  margin-top: 20px;
+  font-size: 1.1em;
+  color: #ecf0f1;
+}
+
+.message.error {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 600px) {
+  .title {
+    font-size: 2em;
+  }
+  .search-box {
+    flex-direction: column;
+    gap: 10px;
+    max-width: 90%;
+  }
+  .search-button {
+    width: 100%;
+  }
+  
+  .profile-header {
+    flex-wrap: wrap;
+  }
+  
+  .avatar {
+    width: 70px;
+    height: 70px;
+    margin-right: 15px;
+  }
+  
+  .info {
+    flex-basis: 100%;
+    margin-top: 15px;
+  }
+  
+  .joined-date {
+    flex-basis: 100%;
+    text-align: left;
+    margin-top: 5px;
+  }
+  
+  .stats-box {
+    flex-direction: row;
+  }
+  
+  .link-item {
+    width: 100%; /* Single item per row on mobile */
+  }
+}
